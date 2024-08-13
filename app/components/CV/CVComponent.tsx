@@ -8,7 +8,7 @@ import Navigation from '../../../Navigation';
 const CVComponent =()=> {
     return (
       <ScrollView>
-        <View style={GlobalStyles.containerDashboard}>
+        <View style={GlobalStyles.containerCV}>
             <Text style={GlobalStyles.title_auth}>Mi Hoja De Vida</Text>
           <View style={GlobalStyles.bodyTopDashboard}>
             <Image source={require('../../../assets/SenaLogo.png')} style={styles.logo_img} />

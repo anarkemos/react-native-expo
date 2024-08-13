@@ -2,12 +2,23 @@ import React from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import GlobalStyles from '../../styles/globalStyles';
 import Navigation from '../../../Navigation';
+import { ScrollView } from 'react-native-gesture-handler';
 
 // Ejemplo de datos de ofertas
 const jobOffers = [
   { id: '1', title: 'Desarrollador React Native', company: 'Tech Company', location: 'Bogotá, Colombia' },
   { id: '2', title: 'Ingeniero de Software', company: 'Startup XYZ', location: 'Medellín, Colombia' },
   { id: '3', title: 'Diseñador UX/UI', company: 'Design Studio', location: 'Cali, Colombia' },
+  { id: '4', title: 'Diseñador que diseñe', company: 'Ropas Diego', location: 'Cali, Singapur' },
+  { id: '5', title: 'Programador re duro', company: 'Heladeria RicaLeche', location: 'Manizales, Canada' },
+  { id: '6', title: 'Desarrollador Frontend', company: 'Tech Innovations', location: 'Barcelona, España' },
+  { id: '7', title: 'Ingeniero de Datos', company: 'DataXperts', location: 'Buenos Aires, Argentina' },
+  { id: '8', title: 'Analista de Sistemas', company: 'SoftSolutions', location: 'Santiago, Chile' },
+  { id: '9', title: 'Arquitecto de Software', company: 'DevMasters', location: 'México D.F., México' },
+  { id: '10', title: 'Desarrollador Backend', company: 'CodeStream', location: 'Lima, Perú' },
+  { id: '11', title: 'Ingeniero de Machine Learning', company: 'AI Labs', location: 'Bogotá, Colombia' },
+  { id: '12', title: 'Especialista en Ciberseguridad', company: 'SecureNet', location: 'Quito, Ecuador' },
+  { id: '13', title: 'Consultor en TI', company: 'TechAdvisors', location: 'Caracas, Venezuela' }
 ];
 
 const MainPageComponent = ({ navigation }) => {
@@ -20,34 +31,35 @@ const MainPageComponent = ({ navigation }) => {
   );
 
   return (
+    <ScrollView>
     <View style={styles.container}>
-    <View>
-
-    </View>
-      <Text style={styles.header}>Ofertas de Trabajo</Text>
+      <Text style={styles.header}>OFERTAS DE TRABAJO</Text>
       <TouchableOpacity>
         <View style={GlobalStyles.ViewCV}>
+        <Image source={require('../../../assets/CvImage.png')} style={GlobalStyles.imgCV}/>
         <TouchableOpacity>
-        <Text  style={GlobalStyles.textCV} onPress={()=> navigation.navigate('CV')}> CVComponent</Text>
-        <Image source={require('../../../assets/CvImage.png')} style={GlobalStyles}></Image>
+        <Text  style={GlobalStyles.textCV} onPress={()=> navigation.navigate('CV')}> Ver Mi Hoja De Vida</Text>
         </TouchableOpacity>
         </View>
       </TouchableOpacity>
-      <View style={styles.buttonsContainer}>
+      <View style={GlobalStyles.dashboardContainer}>
+        <Text style={styles.header}>OFERTAS DISPONIBLES</Text>
+        <View style={styles.buttonsContainer}>
         <TouchableOpacity style={styles.button} >
           <Text style={styles.buttonText}>Filtrar</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} >
           <Text style={styles.buttonText}>Buscar</Text>
         </TouchableOpacity>
-      </View>
-
-      <FlatList style={GlobalStyles.dashboardContainer}
+        </View>
+        <FlatList
         data={jobOffers}
         renderItem={renderJobOffer}
         keyExtractor={item => item.id}
       />
+      </View>
     </View>
+    </ScrollView>
   );
 };
 
