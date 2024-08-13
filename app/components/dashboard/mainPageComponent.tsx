@@ -1,25 +1,5 @@
-// // Dashboard
-// import { Text, View, TouchableOpacity } from 'react-native'
-// import React from 'react'
-// import AntDesign from '@expo/vector-icons/AntDesign';
-// import GlobalStyles from '../../styles/globalStyles';
-
-
-// const MainPageComponent=({navigation})=> {
-//     return (
-//       <View style={GlobalStyles.container_auth}>
-//         <Text>Dashboard</Text>
-//         <TouchableOpacity>
-//         <AntDesign onPress={()=>navigation.navigate('login')} name="home" size={24} color="black" />
-//         </TouchableOpacity>
-//       </View>
-//     )
-// }
-
-// export default MainPageComponent
-
 import React from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import GlobalStyles from '../../styles/globalStyles';
 import Navigation from '../../../Navigation';
 
@@ -28,7 +8,6 @@ const jobOffers = [
   { id: '1', title: 'Desarrollador React Native', company: 'Tech Company', location: 'Bogotá, Colombia' },
   { id: '2', title: 'Ingeniero de Software', company: 'Startup XYZ', location: 'Medellín, Colombia' },
   { id: '3', title: 'Diseñador UX/UI', company: 'Design Studio', location: 'Cali, Colombia' },
-  // Agrega más ofertas según sea necesario
 ];
 
 const MainPageComponent = ({ navigation }) => {
@@ -47,7 +26,12 @@ const MainPageComponent = ({ navigation }) => {
     </View>
       <Text style={styles.header}>Ofertas de Trabajo</Text>
       <TouchableOpacity>
-        <Text onPress={()=> navigation.navigate('CV')}> CVComponent</Text>
+        <View style={GlobalStyles.ViewCV}>
+        <TouchableOpacity>
+        <Text  style={GlobalStyles.textCV} onPress={()=> navigation.navigate('CV')}> CVComponent</Text>
+        <Image source={require('../../../assets/CvImage.png')} style={GlobalStyles}></Image>
+        </TouchableOpacity>
+        </View>
       </TouchableOpacity>
       <View style={styles.buttonsContainer}>
         <TouchableOpacity style={styles.button} >
@@ -58,7 +42,7 @@ const MainPageComponent = ({ navigation }) => {
         </TouchableOpacity>
       </View>
 
-      <FlatList
+      <FlatList style={GlobalStyles.dashboardContainer}
         data={jobOffers}
         renderItem={renderJobOffer}
         keyExtractor={item => item.id}

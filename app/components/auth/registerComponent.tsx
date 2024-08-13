@@ -2,8 +2,10 @@ import { Text, View, TouchableOpacity, TextInput, Image } from 'react-native'
 import React, { Component } from 'react'
 import Navigation from '../../../Navigation'
 import GlobalStyles from '../../styles/globalStyles'
+import { ScrollView } from 'react-native-gesture-handler';
 const RegisterComponent=({navigation})=> {
     return (
+        <ScrollView>
         <View style={GlobalStyles.container_auth}>
         <Text style={GlobalStyles.title_auth}>Registro</Text>
         <Image source={require('../../../assets/SenaLogo.png')} style={GlobalStyles.logo_auth}/>
@@ -17,6 +19,7 @@ const RegisterComponent=({navigation})=> {
             <Text style={GlobalStyles.authText_btn}> Registrarme </Text>
         </TouchableOpacity>
     </View>
+    </ScrollView>
     );
 };
 

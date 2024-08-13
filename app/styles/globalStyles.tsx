@@ -37,10 +37,12 @@ const GlobalStyles = StyleSheet.create({
         textAlign:'center',
         borderRadius: 5,
         fontSize:20,
+        marginBottom:20,
     },
     authText_btn:{
         fontSize: 30,
         color:'white',
+        height: 'auto',
     },
     authText:{
         fontSize:20,
@@ -69,8 +71,27 @@ const GlobalStyles = StyleSheet.create({
     headerTitle:{},
 // container
     dashboardImg:{},
-    ViewCV:{},
-    offers:{},
+    ViewCV:{
+        height:400,
+        backgroundColor: '#DFD3C3',
+        display:'flex',
+        alignItems: 'center',
+        justifyContent: 'flex-start'
+    },
+    dashboardContainer:{
+        height: 'auto',
+        padding: '2%',
+        backgroundColor: '#DFD3C3',
+    },
+    textCV:{
+        marginTop:20,
+        fontSize: 25,
+        fontFamily: 'sans-serif'
+    },
+    imgCV:{
+        width: '80%',
+        height: '60%'
+    },
 
 // CV View
     textGeneral: {
