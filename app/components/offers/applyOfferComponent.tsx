@@ -60,3 +60,5 @@ const ApplyOffersComponent=()=> {
 }
 
 export default ApplyOffersComponent
+
+// se toteó
