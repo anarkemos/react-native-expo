@@ -32,10 +32,17 @@ function TabNavigation(){
     return(
     <Tab.Navigator>
         <Tab.Screen name="dashboard" component={NavigationScreens} options={{headerShown:false, tabBarLabel: () => null, tabBarIcon: ()=>(<AntDesign name="home" size={24} color="black" />)}}/>
+<<<<<<< HEAD
         {/* <Tab.Screen name="Offers" component={OffersComponent} options={{tabBarIcon: ()=>(<MaterialIcons name="local-offer" size={24} color="black" />) , tabBarLabel: () => null, title: 'SENAOFFERTS', headerStyle: GlobalStyles.header_auth, headerTitleStyle: GlobalStyles.headerTitle_auth, headerTitleAlign: 'center'}}/> */}
         {/* <Tab.Screen name="MyOffers" component={MyOffersComponent} options={{tabBarIcon:()=>(<FontAwesome name="save" size={24} color="black" />), tabBarLabel: () => null, title: 'SENAOFFERTS', headerStyle: GlobalStyles.header_auth, headerTitleStyle: GlobalStyles.headerTitle_auth, headerTitleAlign: 'center'}}/> */}
         <Tab.Screen name="CV" component={CVComponent} options={{ tabBarIcon:()=>(<Ionicons name="document-text-outline" size={24} color="black" />) ,tabBarLabel: () => null, title: 'SENASSITENTS', headerStyle: GlobalStyles.header_auth, headerTitleStyle: GlobalStyles.headerTitle_auth, headerTitleAlign: 'center'}}/>
         <Tab.Screen name="login" component={LoginComponent} options={{ tabBarIcon:()=>(<MaterialIcons name="account-circle" size={24} color="black" />),tabBarLabel: () => null, title: 'SENASSITENTS', headerStyle: GlobalStyles.header_auth, headerTitleStyle: GlobalStyles.headerTitle_auth, headerTitleAlign: 'center'}}/>
+=======
+        <Tab.Screen name="Offers" component={ApplyOffersComponent} options={{tabBarIcon: ()=>(<MaterialIcons name="local-offer" size={24} color="black" />) , tabBarLabel: () => null, title: 'SENAOFFERTS', headerStyle: GlobalStyles.header_auth, headerTitleStyle: GlobalStyles.headerTitle_auth, headerTitleAlign: 'center'}}/>
+        {/* <Tab.Screen name="MyOffers" component={MyOffersComponent} options={{tabBarIcon:()=>(<FontAwesome name="save" size={24} color="black" />), tabBarLabel: () => null, title: 'SENAOFFERTS', headerStyle: GlobalStyles.header_auth, headerTitleStyle: GlobalStyles.headerTitle_auth, headerTitleAlign: 'center'}}/> */}
+        <Tab.Screen name="CV" component={CVComponent} options={{ tabBarIcon:()=>(<Ionicons name="document-text-outline" size={24} color="black" />) ,tabBarLabel: () => null, title: 'SENAOFFERTS', headerStyle: GlobalStyles.header_auth, headerTitleStyle: GlobalStyles.headerTitle_auth, headerTitleAlign: 'center'}}/>
+        <Tab.Screen name="login" component={LoginComponent} options={{ tabBarIcon:()=>(<MaterialIcons name="account-circle" size={24} color="black" />),tabBarLabel: () => null, title: 'SENAOFFERTS', headerStyle: GlobalStyles.header_auth, headerTitleStyle: GlobalStyles.headerTitle_auth, headerTitleAlign: 'center'}}/>
+>>>>>>> 1fc8bb88d2f48f8dbbc07f1c18fb4048421cada9
     </Tab.Navigator>
     )
 };
@@ -57,8 +64,12 @@ function NavigationScreens(){
 export default Navigation;
 
 
+<<<<<<< HEAD
 
 // hacer un word o excel y realizar un manual paso  paso de la configuración de ambiente de react native y con expo
 
 // construir una aplicación de solo navegación que lleve la asistencia del sena
 
+=======
+// se toteó 
+>>>>>>> 1fc8bb88d2f48f8dbbc07f1c18fb4048421cada9
