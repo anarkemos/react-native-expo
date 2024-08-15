@@ -1,50 +1,31 @@
-import React from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import GlobalStyles from '../../styles/globalStyles';
-import Navigation from '../../../Navigation';
 
-// Ejemplo de datos de ofertas
-const jobOffers = [
-  { id: '1', title: 'Desarrollador React Native', company: 'Tech Company', location: 'Bogotá, Colombia' },
-  { id: '2', title: 'Ingeniero de Software', company: 'Startup XYZ', location: 'Medellín, Colombia' },
-  { id: '3', title: 'Diseñador UX/UI', company: 'Design Studio', location: 'Cali, Colombia' },
+
+import React from 'react';
+import { View, Text, FlatList, StyleSheet } from 'react-native';
+
+const asistencias = [
+  { id: '1', nombre: 'Juan Trujillo', fecha: '2024-08-15' },
+  { id: '2', nombre: 'María Gómez', fecha: '2024-08-15' },
+  { id: '3', nombre: 'Pedro Martínez', fecha: '2024-08-15' },
+  { id: '4', nombre: 'Ana Fernández', fecha: '2024-08-15' },
+  { id: '5', nombre: 'Luis Rodríguez', fecha: '2024-08-15' },
 ];
 
-const MainPageComponent = ({ navigation }) => {
-  // Función para renderizar cada elemento de la lista
-  const renderJobOffer = ({ item }) => (
-    <TouchableOpacity style={styles.offerContainer} onPress={() => navigation.navigate('Apply', { jobId: item.id })}>
-      <Text style={styles.offerTitle}>{item.title}</Text>
-      <Text style={styles.offerDetails}>{item.company} - {item.location}</Text>
-    </TouchableOpacity>
+const AsistenciasScreen = () => {
+  const renderItem = ({ item }) => (
+    <View style={styles.item}>
+      <Text style={styles.nombre}>{item.nombre}</Text>
+      <Text style={styles.fecha}>{item.fecha}</Text>
+    </View>
   );
 
   return (
     <View style={styles.container}>
-    <View>
-
-    </View>
-      <Text style={styles.header}>Ofertas de Trabajo</Text>
-      <TouchableOpacity>
-        <View style={GlobalStyles.ViewCV}>
-        <TouchableOpacity>
-        <Text  style={GlobalStyles.textCV} onPress={()=> navigation.navigate('CV')}> CVComponent</Text>
-        <Image source={require('../../../assets/CvImage.png')} style={GlobalStyles}></Image>
-        </TouchableOpacity>
-        </View>
-      </TouchableOpacity>
-      <View style={styles.buttonsContainer}>
-        <TouchableOpacity style={styles.button} >
-          <Text style={styles.buttonText}>Filtrar</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} >
-          <Text style={styles.buttonText}>Buscar</Text>
-        </TouchableOpacity>
-      </View>
-
-      <FlatList style={GlobalStyles.dashboardContainer}
-        data={jobOffers}
-        renderItem={renderJobOffer}
+      <Text style={styles.title}>Lista de Asistencias 
+        Ficha 2898749</Text>
+      <FlatList
+        data={asistencias}
+        renderItem={renderItem}
         keyExtractor={item => item.id}
       />
     </View>
@@ -57,43 +38,24 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: '#fff',
   },
-  header: {
+  title: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
-    textAlign: 'center',
   },
-  buttonsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    marginBottom: 20,
-  },
-  button: {
-    backgroundColor: '#007bff',
-    padding: 10,
-    borderRadius: 5,
-    marginRight:10,
-  },
-  buttonText: {
-    color: '#fff',
-    fontWeight: 'bold',
-  },
-  offerContainer: {
-    backgroundColor: '#f9f9f9',
+  item: {
     padding: 15,
-    marginBottom: 10,
-    borderRadius: 5,
-    borderWidth: 1,
-    borderColor: '#e0e0e0',
+    borderBottomWidth: 1,
+    borderBottomColor: '#ddd',
   },
-  offerTitle: {
+  nombre: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: '500',
   },
-  offerDetails: {
-    fontSize: 14,
-    color: '#666',
+  fecha: {
+    fontSize: 16,
+    color: '#555',
   },
 });
 
-export default MainPageComponent;
+export default AsistenciasScreen;
