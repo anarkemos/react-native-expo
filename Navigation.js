@@ -60,5 +60,5 @@ export default Navigation;
 
 // hacer un word o excel y realizar un manual paso  paso de la configuración de ambiente de react native y con expo
 
-// construir una aplicación de solo navegación que lleve la asistencia del sena.
+// construir una aplicación de solo navegación que lleve la asistencia del sena
 
