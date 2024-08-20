@@ -1,10 +1,9 @@
 import React from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import GlobalStyles from '../../styles/globalStyles';
-import Navigation from '../../../Navigation';
 import { ScrollView } from 'react-native-gesture-handler';
+import Navigation from '../../../Navigation';
 
-// Ejemplo de datos de ofertas
 const jobOffers = [
   { id: '1', title: 'Desarrollador React Native', company: 'Tech Company', location: 'Bogotá, Colombia' },
   { id: '2', title: 'Ingeniero de Software', company: 'Startup XYZ', location: 'Medellín, Colombia' },
@@ -32,33 +31,33 @@ const MainPageComponent = ({ navigation }) => {
 
   return (
     <ScrollView>
-    <View style={styles.container}>
-      <Text style={styles.header}>OFERTAS DE TRABAJO</Text>
-      <TouchableOpacity>
-        <View style={GlobalStyles.ViewCV}>
-        <Image source={require('../../../assets/CvImage.png')} style={GlobalStyles.imgCV}/>
+      <View style={styles.container}>
+        <Text style={styles.header}>OFERTAS DE TRABAJO</Text>
         <TouchableOpacity>
-        <Text  style={GlobalStyles.textCV} onPress={()=> navigation.navigate('CV')}> Ver Mi Hoja De Vida</Text>
+          <View style={GlobalStyles.ViewCV}>
+            <Image source={require('../../../assets/CvImage.png')} style={GlobalStyles.imgCV}/>
+            <TouchableOpacity>
+              <Text style={GlobalStyles.textCV} onPress={() => navigation.navigate('CV')}> Ver Mi Hoja De Vida</Text>
+            </TouchableOpacity>
+          </View>
         </TouchableOpacity>
+        <View style={GlobalStyles.dashboardContainer}>
+          <Text style={styles.header}>OFERTAS DISPONIBLES</Text>
+          <View style={styles.buttonsContainer}>
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>Filtrar</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>Buscar</Text>
+            </TouchableOpacity>
+          </View>
+          <FlatList
+            data={jobOffers}
+            renderItem={renderJobOffer}
+            keyExtractor={item => item.id}
+          />
         </View>
-      </TouchableOpacity>
-      <View style={GlobalStyles.dashboardContainer}>
-        <Text style={styles.header}>OFERTAS DISPONIBLES</Text>
-        <View style={styles.buttonsContainer}>
-        <TouchableOpacity style={styles.button} >
-          <Text style={styles.buttonText}>Filtrar</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} >
-          <Text style={styles.buttonText}>Buscar</Text>
-        </TouchableOpacity>
-        </View>
-        <FlatList
-        data={jobOffers}
-        renderItem={renderJobOffer}
-        keyExtractor={item => item.id}
-      />
       </View>
-    </View>
     </ScrollView>
   );
 };
@@ -84,7 +83,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#007bff',
     padding: 10,
     borderRadius: 5,
-    marginRight:10,
+    marginRight: 10,
   },
   buttonText: {
     color: '#fff',

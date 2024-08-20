@@ -5,7 +5,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import GlobalStyles from "./app/styles/globalStyles";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 
@@ -43,8 +42,8 @@ function TabNavigation(){
 function NavigationScreens(){
     return(
             <Stack.Navigator>
-                <Stack.Screen name='dashboard' component={MainPageComponent} options={{ title: 'SENAOFFERTS', headerStyle: GlobalStyles.header_auth, headerTitleStyle: GlobalStyles.headerTitle_auth, headerTitleAlign: 'center'}} />
                 <Stack.Screen name='login' component={LoginComponent} options={{ title: 'SENAOFFERTS', headerStyle: GlobalStyles.header_auth, headerTitleStyle: GlobalStyles.headerTitle_auth, headerTitleAlign: 'center'}} />
+                <Stack.Screen name='dashboard' component={MainPageComponent} options={{ title: 'SENAOFFERTS', headerStyle: GlobalStyles.header_auth, headerTitleStyle: GlobalStyles.headerTitle_auth, headerTitleAlign: 'center'}} />
                 <Stack.Screen name='register' component={RegisterComponent} options={{ title: 'SENAOFFERTS', headerStyle: GlobalStyles.header_auth, headerTitleStyle: GlobalStyles.headerTitle_auth, headerTitleAlign: 'center'}} />
                 <Stack.Screen name='CV' component={CVComponent} options={{ title: 'SENAOFFERTS', headerStyle: GlobalStyles.header_auth, headerTitleStyle: GlobalStyles.headerTitle_auth, headerTitleAlign: 'center'}} />
                 <Stack.Screen name='Apply' component={ApplyOffersComponent} options={{ title: 'SENAOFFERTS', headerStyle: GlobalStyles.header_auth, headerTitleStyle: GlobalStyles.headerTitle_auth, headerTitleAlign: 'center'}} />
