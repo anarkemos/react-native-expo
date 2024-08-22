@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Text, View, Image, TouchableOpacity, Alert } from "react-native";
-import { TextInput } from "react-native-gesture-handler";
+import { Text, View, Image, TouchableOpacity, TextInput} from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import GlobalStyles from "../../styles/globalStyles";
 

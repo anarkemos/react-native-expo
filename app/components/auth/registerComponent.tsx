@@ -6,8 +6,8 @@ import {
   TextInput,
   Image,
   Alert,
+  ScrollView,
 } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import GlobalStyles from "../../styles/globalStyles";
 

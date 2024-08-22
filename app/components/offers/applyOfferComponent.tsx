@@ -1,8 +1,7 @@
 // Aplicar a ofertas
-import { Text, TouchableOpacity, View } from 'react-native'
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native'
 import React, { Component } from 'react'
 import GlobalStyles from '../../styles/globalStyles'
-import { ScrollView } from 'react-native-gesture-handler'
 const ApplyOffersComponent=()=> {
     return (
       // Ofertas de trabajo

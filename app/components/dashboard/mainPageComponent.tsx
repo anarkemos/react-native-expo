@@ -1,8 +1,6 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
 import GlobalStyles from '../../styles/globalStyles';
-import { ScrollView } from 'react-native-gesture-handler';
-import Navigation from '../../../Navigation';
 
 const jobOffers = [
   { id: '1', title: 'Desarrollador React Native', company: 'Tech Company', location: 'Bogotá, Colombia' },
