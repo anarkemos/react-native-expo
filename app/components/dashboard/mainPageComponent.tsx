@@ -106,3 +106,6 @@ const styles = StyleSheet.create({
 });
 
 export default MainPageComponent;
+
+
+// se toteó
